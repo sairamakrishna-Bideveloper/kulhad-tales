@@ -30,3 +30,38 @@ footer{background:#160a06;color:#dbc8b5;padding:40px 6%;display:grid;grid-templa
  .dark-section{padding:70px 5%}.section-head{display:block}.price-note{text-align:left;margin-top:12px}.menu-grid{grid-template-columns:1fr}.menu-card img{height:250px}
  .manifesto{height:460px}.manifesto h2{font-size:55px}.gallery-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 200px}.g1{grid-row:span 2}.visit{padding:70px 5%}.visit-card{padding:45px 7%}.visit-card h2{font-size:44px}.visit-details{grid-template-columns:1fr}.visit-details div:last-child{grid-column:auto}.whatsapp{width:48px;height:48px}
 }
+
+/* Simple POS / Order section */
+.order-section{background:#f8eddc}.order-note{max-width:340px;color:var(--muted);font-size:13px;line-height:1.6}.pos-wrap{display:grid;grid-template-columns:1.35fr .75fr;gap:24px;align-items:start}.pos-menu{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.pos-item{border:1px solid var(--line);background:#fffaf2;text-align:left;padding:18px;cursor:pointer;min-height:112px;display:grid;gap:8px;transition:.2s;color:var(--ink)}.pos-item:hover{transform:translateY(-3px);border-color:#b65d2d}.pos-item span{font-family:"Playfair Display";font-size:18px}.pos-item b{font-size:15px;color:#a34f28}.pos-item small{font-size:9px;letter-spacing:.16em;color:var(--muted)}.cart-box{background:var(--brown);color:#fff;padding:24px;position:sticky;top:95px}.cart-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:15px}.cart-head h3{font-family:"Playfair Display";font-size:26px;margin:0}.cart-head button{background:none;border:0;color:#d9b79e;cursor:pointer}.cart-items{min-height:130px;padding:10px 0}.empty-cart{color:#cdb7a5;font-size:12px;line-height:1.5}.cart-row{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.09)}.cart-row b{display:block;font-size:13px}.cart-row small{display:block;color:#bca696;font-size:10px;margin-top:3px}.qty{display:flex;align-items:center;gap:7px}.qty button{width:25px;height:25px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;cursor:pointer}.qty span{min-width:14px;text-align:center;font-size:12px}.cart-total{display:flex;justify-content:space-between;border-top:1px solid rgba(255,255,255,.2);padding:18px 0;font-size:15px}.cart-total strong{font-size:20px;color:#e8a16b}.pay-btn{width:100%;border:0;background:var(--terracotta);color:#fff;padding:15px;border-radius:4px;font-weight:700;cursor:pointer}.pay-btn:disabled{opacity:.45;cursor:not-allowed}.demo-note{font-size:9px;color:#bca696;text-align:center;margin:10px 0 0}.bill-modal{position:fixed;inset:0;background:rgba(10,5,2,.72);display:none;align-items:center;justify-content:center;padding:20px;z-index:100}.bill-modal.open{display:flex}.bill-card{width:min(430px,100%);max-height:90vh;overflow:auto;background:#fffaf2;color:var(--ink);padding:32px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.3)}.bill-close{position:absolute;right:15px;top:12px;border:0;background:none;font-size:28px;cursor:pointer;color:var(--muted)}.bill-logo{text-align:center;font-family:"Playfair Display";font-size:28px;letter-spacing:.08em}.bill-sub{text-align:center;color:var(--muted);font-size:11px}.bill-meta{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);gap:10px}.bill-lines{padding:15px 0}.bill-lines>div{display:flex;justify-content:space-between;padding:7px 0;font-size:13px}.bill-grand{display:flex;justify-content:space-between;font-size:13px}.bill-grand strong{font-size:22px}.paid{text-align:center;color:#47723b;font-weight:700;font-size:11px;margin:20px 0 8px}.bill-thanks{text-align:center;color:var(--muted);font-size:11px}.print-btn{width:100%;margin-top:18px;padding:13px;border:1px solid var(--ink);background:transparent;cursor:pointer;font-weight:700}
+@media(max-width:900px){.pos-wrap{grid-template-columns:1fr}.cart-box{position:static}.pos-menu{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.pos-menu{grid-template-columns:1fr}.order-note{margin-top:10px}}
+
+/* Printing is handled by a dedicated receipt window in script.js. */
+.print-btn:disabled{opacity:.55;cursor:wait}
+
+/* Professional ordering experience */
+.order-section{background:#f6ead8;position:relative;overflow:hidden}
+.order-section:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-180px;top:-180px;background:rgba(182,93,45,.08);pointer-events:none}
+.order-head{position:relative}
+.order-intro{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 2% 28px;color:#765e50;font-size:11px;text-transform:uppercase;letter-spacing:.12em}
+.order-intro span{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#2a160e;color:#fff;font-size:9px}
+.order-intro b{font-weight:600;margin-right:14px}
+.pos-wrap{position:relative;z-index:1}
+.pos-item{border-radius:3px;box-shadow:0 7px 20px rgba(67,35,20,.05)}
+.pos-item:focus-visible,.pay-btn:focus-visible,.print-btn:focus-visible,.secondary-btn:focus-visible{outline:3px solid rgba(182,93,45,.28);outline-offset:3px}
+.cart-box{border-radius:4px;box-shadow:0 18px 45px rgba(35,18,11,.16)}
+.cart-kicker{display:block;font-size:8px;letter-spacing:.2em;color:#d79b68;margin-bottom:4px}
+.cart-head h3{margin-top:0}
+.order-options{border-top:1px solid rgba(255,255,255,.12);margin-top:4px;padding-top:16px;display:grid;gap:14px}
+.order-options label{font-size:11px;color:#e6d6c8}
+.order-options label>span,.option-group>span{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.14em;color:#bca696;margin-bottom:7px}
+.order-options input[type=text]{width:100%;padding:11px 12px;border:1px solid rgba(255,255,255,.2);border-radius:3px;background:#2e170f;color:#fff;outline:none}
+.order-options input[type=text]::placeholder{color:#8e7565}
+.choice-row{display:flex;gap:12px;flex-wrap:wrap}
+.choice-row label{display:flex;align-items:center;gap:5px;color:#e6d6c8;cursor:pointer}
+.choice-row input{accent-color:#d79b68}
+.pay-btn{margin-top:2px;border-radius:3px}
+.pay-btn:not(:disabled):hover{filter:brightness(1.08);transform:translateY(-1px)}
+.secondary-btn{width:100%;margin-top:9px;padding:11px;border:1px solid #bba795;background:transparent;color:#3b2419;cursor:pointer;font-weight:700;border-radius:3px}
+.bill-card{border-radius:4px}
+@media(max-width:900px){.order-intro{margin-left:0;margin-right:0}.order-intro b{margin-right:6px}}
